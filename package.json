@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mkrtchyantigran.github.io/project-Dance",
   "name": "Dance",
   "version": "1.0.0",
   "description": "Front end Project",
@@ -6,7 +7,9 @@
   "scripts": {
     "start": "gulp watch",
     "build": "gulp build",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "YouTube",
