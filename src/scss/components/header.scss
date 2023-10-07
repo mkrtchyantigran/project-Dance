@@ -1,0 +1,175 @@
+@import "../variables.scss";
+
+header {
+    
+    min-height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .nav_left {
+            img {
+                display: block;
+            } 
+        }
+
+        .nav_mobile{
+            display: none;
+        }
+
+        .nav_right {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+
+            .nav_menu {
+                display: flex;
+                margin: 0;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        color: #fff;
+                        min-height: 100px;
+                        padding: 0px 16px;
+                        transition: 0.2s;
+                        
+
+                        &:hover {
+                            background: $primary;
+                            border-radius: 0px 0px 30px 30px;
+                        }
+                    }
+                }
+            }
+
+            .nav_lang {
+                display: flex;
+                gap: 16px;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color:#fff;
+                }
+            }
+
+        }
+
+        @media screen and (max-width: $mobile) {
+            min-height: 100px;
+
+            .nav_mobile {
+                display: block;
+            }
+
+            .nav_right { 
+                    position: fixed;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    top: 0;
+                    left: -5000px;
+                    width: 250px;
+                    height: 100vh;
+                    background:#fff;
+                    gap: 32px;
+                    transition: left 0.3s;
+                    z-index: 555;
+
+                    &.active_nav {
+                        transition: left 0.3s;
+                        left: 0px;
+                    }
+
+                    .nav_menu {
+                        flex-direction: column;
+                        gap: 0px;
+                        width: 100%;
+                        border-bottom: 0.5px solid #eee;
+
+                        li {
+                            a {
+                                padding: 0px 30px;
+                                color: $darkText;
+
+                                &:hover {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .nav_lang {
+                        padding: 0px 30px;
+                       a {
+                        color: $darkText;
+                       }
+                    }
+
+                    .nav_btn {
+                      padding: 0px 30px;
+                      width: 100%;
+                      
+                      a {
+                        width: 100%;
+                        text-align: center;
+                      }
+                    }
+            }
+        }
+    }
+
+    .header_content {
+        max-width: 540px;
+        padding: 128px 10px 128px 10px;
+        margin: 0 auto;
+        text-align: center;
+
+        h1 {
+            font-size: min(99px, max(40px + 2vw));
+            letter-spacing: 5px;
+            color:#fff;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        p {
+            margin: 64px 0px;
+            font-size: 21px;
+            color: #fff;
+            letter-spacing: 0.2px;
+        }
+
+        a {
+            width: 183px;
+            height: 42px;
+            margin: 0 auto;
+            line-height: 26px;
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        min-height: unset;
+
+        .header_content {
+            padding: 64px 10px 64px 10px ;
+
+            p {
+                margin: 32px 0px;
+            }
+        }
+    }
+
+}
+
+
+
